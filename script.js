@@ -1,40 +1,61 @@
-const text = [
+const words = [
+"Aspiring Electrical Engineer",
 "Python Developer",
-"Web Developer",
-"Future Software Engineer"
+"Arduino Enthusiast",
+"Problem Solver"
 ];
 
-let i = 0;
-let j = 0;
-let current = "";
-let isDeleting = false;
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
 
-function type(){
+function typeEffect(){
 
-current = text[i];
+const current = words[wordIndex];
 
-if(!isDeleting){
-j++;
+if(!deleting){
+charIndex++;
 }else{
-j--;
+charIndex--;
 }
 
-document.getElementById("typing")
-.textContent = current.substring(0,j);
+document.getElementById("typing").textContent =
+current.substring(0,charIndex);
 
-if(j===current.length){
-isDeleting=true;
-setTimeout(type,1000);
+if(!deleting && charIndex === current.length){
+deleting = true;
+setTimeout(typeEffect,1200);
 return;
 }
 
-if(j===0){
-isDeleting=false;
-i=(i+1)%text.length;
+if(deleting && charIndex === 0){
+deleting = false;
+wordIndex = (wordIndex + 1) % words.length;
 }
 
-setTimeout(type,isDeleting?50:100);
+setTimeout(typeEffect,deleting ? 50 : 100);
 
 }
 
-type();
+typeEffect();
+
+function updateClock(){
+
+const now = new Date();
+
+document.getElementById("clock").innerHTML =
+now.toLocaleTimeString();
+
+}
+
+setInterval(updateClock,1000);
+
+updateClock();
+
+function resumeAlert(){
+
+alert(
+"Résumé Coming Soon!"
+);
+
+}
