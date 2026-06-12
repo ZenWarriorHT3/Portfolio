@@ -207,3 +207,19 @@ justify-content:center;
 }
 
 }
+
+.project-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#2563eb;
+color:white;
+text-decoration:none;
+border-radius:30px;
+transition:0.3s;
+}
+
+.project-btn:hover{
+transform:translateY(-3px);
+box-shadow:0 0 15px rgba(37,99,235,0.6);
+}
