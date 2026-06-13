@@ -223,3 +223,48 @@ transition:0.3s;
 transform:translateY(-3px);
 box-shadow:0 0 15px rgba(37,99,235,0.6);
 }
+
+.stats{
+margin-top:15px;
+font-size:1rem;
+color:#94a3b8;
+}
+
+blockquote{
+margin-top:20px;
+padding-left:15px;
+border-left:4px solid #60a5fa;
+color:#cbd5e1;
+font-style:italic;
+}
+
+.learning-list{
+margin-left:20px;
+line-height:2;
+color:#cbd5e1;
+}
+
+.tags{
+margin-top:12px;
+margin-bottom:15px;
+}
+
+.tags span{
+display:inline-block;
+padding:6px 12px;
+margin-right:8px;
+margin-bottom:8px;
+background:#1e293b;
+border-radius:20px;
+font-size:0.8rem;
+color:#60a5fa;
+}
+
+.card{
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
