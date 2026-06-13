@@ -17,10 +17,14 @@ position:fixed;
 width:100%;
 height:100%;
 z-index:-1;
+
 background:
 radial-gradient(circle at top left,#2563eb,transparent),
 radial-gradient(circle at bottom right,#06b6d4,transparent);
+
 filter:blur(140px);
+
+animation:bgMove 12s ease-in-out infinite;
 }
 
 nav{
@@ -33,6 +37,12 @@ padding:25px 10%;
 .logo{
 font-size:1.3rem;
 font-weight:bold;
+color:white;
+
+text-shadow:
+0 0 5px #60a5fa,
+0 0 15px #60a5fa,
+0 0 30px #2563eb;
 }
 
 nav ul{
@@ -64,6 +74,17 @@ padding:20px;
 .hero h1{
 font-size:4rem;
 margin-bottom:10px;
+
+background:
+linear-gradient(
+90deg,
+#ffffff,
+#60a5fa,
+#06b6d4
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero h2{
@@ -134,6 +155,8 @@ margin-top:8px;
 .fill{
 height:100%;
 background:#60a5fa;
+
+animation:fillAnim 2s ease;
 }
 
 .section-title{
@@ -157,6 +180,9 @@ padding:25px;
 background:rgba(255,255,255,0.05);
 border-radius:20px;
 transition:0.4s;
+
+position:relative;
+overflow:hidden;
 }
 
 .project-card:hover{
@@ -266,5 +292,57 @@ transition:0.3s;
 
 .card:hover{
 transform:translateY(-5px);
+}
+
+.github-btn:hover{
+box-shadow:0 0 20px #2563eb;
+transform:translateY(-3px);
+}
+
+.project-card::before{
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.08),
+transparent
+);
+
+transition:0.6s;
+}
+
+.project-card:hover::before{
+left:100%;
+}
+
+@keyframes fillAnim{
+
+from{
+width:0;
+}
+
+}
+
+@keyframes bgMove{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
 }
 
